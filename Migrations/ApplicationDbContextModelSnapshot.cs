@@ -21,13 +21,34 @@ namespace SSCase.Migrations
                     b.Property<int>("ClientID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Country");
+                    b.Property<string>("CountryID");
 
                     b.Property<string>("Name");
 
                     b.HasKey("ClientID");
 
+                    b.HasIndex("CountryID");
+
                     b.ToTable("Clients");
+                });
+
+            modelBuilder.Entity("SS_Case.Models.Country", b =>
+                {
+                    b.Property<string>("CountryID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("CountryID");
+
+                    b.ToTable("Countries");
+                });
+
+            modelBuilder.Entity("SS_Case.Models.Client", b =>
+                {
+                    b.HasOne("SS_Case.Models.Country", "Country")
+                        .WithMany()
+                        .HasForeignKey("CountryID");
                 });
         }
     }

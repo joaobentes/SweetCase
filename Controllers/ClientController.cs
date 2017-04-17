@@ -49,6 +49,8 @@ namespace SS_Case.Controllers
         public IActionResult Index() 
         {
             var model = _context.Clients.ToList();
+            ViewBag.CountryList = _context.Countries.ToList();
+
             return View(model);
         }
 
