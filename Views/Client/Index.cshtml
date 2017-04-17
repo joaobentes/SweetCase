@@ -48,12 +48,8 @@
             <td>@item.Name</td>
             <td>@item.Country.Name</td> 
             <td>
-              <button type="button" class="btn btn-default btn-xs" data-id="@item.ClientID">
-                <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-xs" data-id="@item.ClientID">
-                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-              </button>          
+              <input type="submit" class="btn btn-default btn-xs" value="Edit" />
+              <input type="button" class="btn btn-default btn-xs" value="Delete" onclick="location.href='@Url.Action("Delete", "Client", new {clientID = @item.ClientID}, null)'" />
             </td>
           </tr>  
         </a>    

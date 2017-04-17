@@ -35,9 +35,11 @@ namespace SS_Case.Controllers
             return View(client);
         }
 
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int clientID)
         {
-            var original = _context.Clients.FirstOrDefault(e => e.ClientID == id);
+            System.Console.WriteLine("Trying to delete");
+            System.Console.WriteLine(clientID);
+            var original = _context.Clients.FirstOrDefault(e => e.ClientID == clientID);
             if(original != null)
             {
                 _context.Clients.Remove(original);
