@@ -8,7 +8,7 @@ using SS_Case.Models;
 namespace SSCase.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170417064740_InitialCreate")]
+    [Migration("20170417173845_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

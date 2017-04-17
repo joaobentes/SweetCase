@@ -6,7 +6,6 @@ namespace SS_Case.Models
     {
         public DbSet<Client> Clients { get; set; }
         public DbSet<Country> Countries { get; set; }
-        
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options) {}
     }
 }
