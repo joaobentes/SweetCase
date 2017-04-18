@@ -43,17 +43,14 @@
       </tr>
       @foreach (var item in Model)
       {
-        <a asp-action="Details" asp-controller="Client" asp-route-id="@item.ClientID">
-          <tr>          
-            <td>@item.Name</td>
-            <td>@item.Country.Name</td> 
-            <td>
-              <input type="button" class="btn btn-default btn-xs" value="Edit" data-toggle="modal" data-client-id="@item.ClientID" data-client-name="@item.Name" data-country-id="@item.CountryID" data-target="#UpdateModal"/>
-              <!---<input type="button" class="btn btn-default btn-xs" value="Delete" onclick="location.href='@Url.Action("Delete", "Client", new {clientID = @item.ClientID}, null)'" />-->
-              <input type="button" class="btn btn-default btn-xs" value="Delete" data-toggle="modal" data-client-id="@item.ClientID" data-client-name="@item.Name" data-target="#DeleteModal"/>
-            </td>
-          </tr>  
-        </a>    
+        <tr>          
+          <td>@item.Name</td>
+          <td>@item.Country.Name</td> 
+          <td>
+            <input type="button" class="btn btn-default btn-xs" value="Edit" data-toggle="modal" data-client-id="@item.ClientID" data-client-name="@item.Name" data-country-id="@item.CountryID" data-target="#UpdateModal"/>
+            <input type="button" class="btn btn-default btn-xs" value="Delete" data-toggle="modal" data-client-id="@item.ClientID" data-client-name="@item.Name" data-target="#DeleteModal"/>
+          </td>
+        </tr>  
       }
     </table>  
   </div>

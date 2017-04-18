@@ -29,12 +29,6 @@ namespace SS_Case.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Details(int id)
-        {
-            var client = _context.Clients.FirstOrDefault(e => e.ClientID == id);
-            return View(client);
-        }
-
         public IActionResult Delete(int clientID)
         {
             var original = _context.Clients.FirstOrDefault(e => e.ClientID == clientID);
