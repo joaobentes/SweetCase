@@ -37,8 +37,6 @@ namespace SS_Case.Controllers
 
         public IActionResult Delete(int clientID)
         {
-            System.Console.WriteLine("Trying to delete");
-            System.Console.WriteLine(clientID);
             var original = _context.Clients.FirstOrDefault(e => e.ClientID == clientID);
             if(original != null)
             {
